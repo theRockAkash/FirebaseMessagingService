@@ -5,7 +5,25 @@
 ```
   <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 ```
+#build.gladle
 
+```
+ //app level plugin
+ id("com.google.gms.google-services")
+
+
+//dependencies
+ implementation(platform("com.google.firebase:firebase-bom:32.1.1"))
+
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+
+    // Add the dependency for the Firebase SDK for Google Analytics
+    implementation("com.google.firebase:firebase-analytics-ktx")
+    implementation("com.google.firebase:firebase-messaging-ktx")
+
+// project level plugin
+  id("com.google.gms.google-services") version "4.3.15" apply false
+```
 
 #Update Manifest File
 
